@@ -1,18 +1,14 @@
+import axios from 'axios'
 import React, { useState } from 'react'
 import CustomTextField from './shared/formElements/CustomTextField'
+import { Post } from './types/Post'
 import { ButtonType, InputSize, InputType, InputVariant } from './enums'
 import CustomButton from './shared/formElements/CustomButton'
-import axios from 'axios'
 
-type Values = {
-	email: string
-	password: string
-}
-
-const SignUpForm = () => {
-	const [values, setValues] = useState<Values>({
-		email: '',
-		password: '',
+const AddPostForm = () => {
+	const [values, setValues] = useState<Post>({
+		imageUrl: '',
+		ownerId: '',
 	})
 
 	const loginUser = () => {
@@ -21,7 +17,7 @@ const SignUpForm = () => {
 		const addUser = () => axios.post(loginUrl, values)
 
 		const ifUserExists = axios
-			.get(`${loginUrl}?email=${values.email}`)
+			.get(`${loginUrl}?email=${values.imageUrl}`)
 			.then((res) => {
 				if (res.data.length > 0) {
 					console.log(res.data)
@@ -39,9 +35,8 @@ const SignUpForm = () => {
 	const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
 		loginUser()
-		setValues({ email: '', password: '' })
+		setValues({ imageUrl: '', ownerId: '' })
 	}
-
 	return (
 		<form onSubmit={(event) => handleSubmit(event)}>
 			<CustomTextField
@@ -73,4 +68,4 @@ const SignUpForm = () => {
 	)
 }
 
-export default SignUpForm
+export default AddPostForm
