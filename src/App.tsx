@@ -1,5 +1,6 @@
 import React from 'react'
 import Navigation from './components/shared/Nav'
+import SignUpForm from './components/SignUpForm'
 
 function App() {
 	return (
@@ -7,6 +8,7 @@ function App() {
 			<header className='App-header'>
 				<Navigation></Navigation>
 			</header>
+			<SignUpForm />
 		</div>
 	)
 }
