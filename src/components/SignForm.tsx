@@ -1,36 +1,50 @@
 import React, { useState } from 'react'
 import CustomTextField from './shared/formElements/CustomTextField'
-import { ButtonType, InputSize, InputType, InputVariant } from './enums'
+import {
+	ButtonType,
+	InputSize,
+	InputType,
+	InputVariant,
+	SignAction,
+} from './enums'
 import CustomButton from './shared/formElements/CustomButton'
 import axios from 'axios'
 import Form from 'react-bootstrap/Form'
+import { useGlobalContext } from '../context'
 
 type Values = {
 	email: string
 	password: string
 }
+interface ISignForm {
+	type: SignAction
+}
 
-const SignUpForm = () => {
+const SignForm = (props: ISignForm) => {
 	const [values, setValues] = useState<Values>({
 		email: '',
 		password: '',
 	})
+	const { user, setUser } = useGlobalContext()
+	const { type } = props
 
-	const loginUser = () => {
+	const loginUser = async () => {
 		const loginUrl = 'http://localhost:3001/users'
 
-		const addUser = () => axios.post(loginUrl, values)
-
-		const ifUserExists = axios
-			.get(`${loginUrl}?email=${values.email}`)
-			.then((res) => {
-				if (res.data.length > 0) {
-					console.log(res.data)
-				} else {
-					addUser()
-					console.log('abc')
-				}
+		if (type === SignAction.signIn) {
+			console.log(`${loginUrl}?email=${values.email}`)
+			const loginUser = await axios
+				.get(`${loginUrl}?email=${values.email}`)
+				.then((res) => {
+					const userId = res.data[0].id
+					setUser(userId)
+				})
+		} else {
+			const addUser = await axios.post(loginUrl, values).then((res) => {
+				const userId = res.data.id
+				setUser(userId)
 			})
+		}
 	}
 
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -74,4 +88,4 @@ const SignUpForm = () => {
 	)
 }
 
-export default SignUpForm
+export default SignForm

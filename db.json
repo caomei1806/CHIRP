@@ -1,53 +1,58 @@
 {
-	"users": [
-		{
-			"id": 1,
-			"email": "user1@gmail.com",
-			"password": "password123"
-		},
-		{
-			"id": 2,
-			"email": "user2@gmail.com",
-			"password": "password123"
-		},
-		{
-			"id": 3,
-			"email": "user3@gmail.com",
-			"password": "password123"
-		},
-		{
-			"email": "user4@gmail.com",
-			"password": "",
-			"id": 4
-		}
-	],
-	"posts": [
-		{
-			"id": 1,
-			"imageUrl": "https://images.unsplash.com/photo-1592089416462-2b0cb7da8379?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
-			"caption": "indian ringneck",
-			"postedAt": "Tue Apr 25 2023 11:26:08 GMT+0200",
-			"ownerId": 1
-		},
-		{
-			"id": 2,
-			"imageUrl": "https://images.unsplash.com/photo-1602009941965-2bdde47c6e27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80",
-			"caption": "amazon",
-			"postedAt": "Mon Apr 24 2023 10:17:02 GMT+0200",
-			"ownerId": 2
-		},
-		{
-			"id": 3,
-			"imageUrl": "https://images.unsplash.com/photo-1588336142586-36aff13141fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
-			"caption": "cockatoo",
-			"postedAt": "Mon May 15 2023 10:17:02 GMT+0200",
-			"ownerId": 2
-		},
-		{
-			"imageUrl": "https://res.cloudinary.com/dqd3dzadw/image/upload/v1682591181/q8yw259ar1ufqmmagyo1.png",
-			"caption": "violet",
-			"ownerId": "1",
-			"id": 5
-		}
-	]
+  "users": [
+    {
+      "id": 1,
+      "email": "user1@gmail.com",
+      "password": "password123"
+    },
+    {
+      "id": 2,
+      "email": "user2@gmail.com",
+      "password": "password123"
+    },
+    {
+      "id": 3,
+      "email": "user3@gmail.com",
+      "password": "password123"
+    },
+    {
+      "email": "user4@gmail.com",
+      "password": "",
+      "id": 4
+    },
+    {
+      "email": "user5@gmail.com",
+      "password": "123",
+      "id": 5
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "imageUrl": "https://images.unsplash.com/photo-1592089416462-2b0cb7da8379?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+      "caption": "indian ringneck",
+      "postedAt": "Tue Apr 25 2023 11:26:08 GMT+0200",
+      "ownerId": 1
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://images.unsplash.com/photo-1602009941965-2bdde47c6e27?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80",
+      "caption": "amazon",
+      "postedAt": "Mon Apr 24 2023 10:17:02 GMT+0200",
+      "ownerId": 2
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://images.unsplash.com/photo-1588336142586-36aff13141fc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
+      "caption": "cockatoo",
+      "postedAt": "Mon May 15 2023 10:17:02 GMT+0200",
+      "ownerId": 2
+    },
+    {
+      "imageUrl": "https://res.cloudinary.com/dqd3dzadw/image/upload/v1682591181/q8yw259ar1ufqmmagyo1.png",
+      "caption": "violet",
+      "ownerId": "1",
+      "id": 5
+    }
+  ]
 }

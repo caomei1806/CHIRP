@@ -1,5 +1,5 @@
 import Navigation from './components/shared/Nav'
-import SignUpForm from './components/SignUpForm'
+import SignForm from './components/SignForm'
 import {
 	createBrowserRouter,
 	createRoutesFromElements,
@@ -9,14 +9,21 @@ import {
 } from 'react-router-dom'
 import AddPostForm from './components/AddPostForm'
 import FeedPage from './components/FeedPage'
+import { SignAction } from './components/enums'
 
 function App() {
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route path='/' element={<Root />}>
-				<Route index element={<SignUpForm />} />
-				<Route path='/sign-up' element={<SignUpForm />} />
-				<Route path='/sign-in' element={<SignUpForm />} />
+				<Route index element={<SignForm type={SignAction.signIn} />} />
+				<Route
+					path='/sign-up'
+					element={<SignForm type={SignAction.signUp} />}
+				/>
+				<Route
+					path='/sign-in'
+					element={<SignForm type={SignAction.signIn} />}
+				/>
 				<Route path='/post-add' element={<AddPostForm />} />
 				<Route path='/posts' element={<FeedPage />} />
 			</Route>

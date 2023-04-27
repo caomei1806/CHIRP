@@ -11,7 +11,7 @@ interface IPost {
 }
 
 const Post = (props: IPost) => {
-	const { imageUrl, caption, ownerId } = props.post
+	const { id, imageUrl, caption, ownerId } = props.post
 	const [ownerUsername, setOwnerUsername] = useState<String>()
 
 	const postImage = createRef<HTMLImageElement>()
@@ -39,6 +39,15 @@ const Post = (props: IPost) => {
 				image.style.width = '100%'
 			}
 		}
+	}
+	const documentLikePost = async () => {
+		const likesUrl = 'http://localhost:3001/likes'
+
+		const like = { postId: id, personWhoLikedId: 1 }
+
+		const likePicture = await axios
+			.post(likesUrl, like)
+			.then((res) => console.log(res.status))
 	}
 	const likePost = (e: React.SyntheticEvent) => {
 		const liked = !isLiked
