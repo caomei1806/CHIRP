@@ -3,6 +3,7 @@ import CustomTextField from './shared/formElements/CustomTextField'
 import { ButtonType, InputSize, InputType, InputVariant } from './enums'
 import CustomButton from './shared/formElements/CustomButton'
 import axios from 'axios'
+import Form from 'react-bootstrap/Form'
 
 type Values = {
 	email: string
@@ -43,7 +44,7 @@ const SignUpForm = () => {
 	}
 
 	return (
-		<form onSubmit={(event) => handleSubmit(event)}>
+		<Form onSubmit={(event) => handleSubmit(event)}>
 			<CustomTextField
 				type={InputType.text}
 				name={'email'}
@@ -69,7 +70,7 @@ const SignUpForm = () => {
 				variant={InputVariant.Primary}
 				size={InputSize.Medium}
 			/>
-		</form>
+		</Form>
 	)
 }
 

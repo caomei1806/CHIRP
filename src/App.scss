@@ -1,1 +1,13 @@
 @import "~bootstrap/scss/bootstrap";
+.App {
+	main {
+		& > * {
+			display: flex;
+			flex-direction: column;
+			gap: 2rem;
+		}
+		& > form {
+			width: 50%;
+		}
+	}
+}

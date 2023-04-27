@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container'
 import Form from 'react-bootstrap/Form'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
-import NavDropdown from 'react-bootstrap/NavDropdown'
+import { LinkContainer } from 'react-router-bootstrap'
 
 const Navigation = () => {
 	return (
@@ -17,8 +17,18 @@ const Navigation = () => {
 						style={{ maxHeight: '100px' }}
 						navbarScroll
 					>
-						<Nav.Link href='#action1'>Sign up</Nav.Link>
-						<Nav.Link href='#action2'>Sign in</Nav.Link>
+						<LinkContainer to='/sign-up'>
+							<Nav.Link>Sign up</Nav.Link>
+						</LinkContainer>
+						<LinkContainer to='/sign-in'>
+							<Nav.Link>Sign in</Nav.Link>
+						</LinkContainer>
+						<LinkContainer to='/post-add'>
+							<Nav.Link>+</Nav.Link>
+						</LinkContainer>
+						<LinkContainer to='/posts'>
+							<Nav.Link>Home</Nav.Link>
+						</LinkContainer>
 					</Nav>
 					<Form className='d-flex'>
 						<Form.Control

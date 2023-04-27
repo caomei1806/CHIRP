@@ -1,0 +1,41 @@
+input {
+	&[type="file"] {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity: 0;
+		z-index: 2;
+		// &::after {
+		// 	// content: '<img src="https://res.cloudinary.com/dqd3dzadw/image/upload/v1682585738/zlxtvwcbvzlfjuqitgmp.png" alt="add photo"/>';
+		// 	content: "abc";
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	display: block;
+		// 	background-color: black;
+		// 	position: absolute;
+		// 	top: 0;
+		// 	left: 0;
+		// }
+	}
+}
+.input {
+	&-customBox {
+		position: relative;
+		width: 15rem;
+		height: 15rem;
+	}
+	&-overlay {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		background-image: url("https://res.cloudinary.com/dqd3dzadw/image/upload/v1682587496/cwppyvzstqhh8cav99zg.png");
+		background-size: contain;
+		background-repeat: no-repeat;
+		cursor: pointer;
+	}
+}

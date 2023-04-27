@@ -1,4 +1,7 @@
 export type Post = {
-	"imageUrl": String,
-	"ownerId": String
+	id?: String,
+	imageUrl: String,
+	caption: String,
+	postedAt?: Date,
+	ownerId: String
 }

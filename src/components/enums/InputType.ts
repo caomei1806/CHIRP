@@ -1,5 +1,5 @@
 export enum InputType{
-	text,
-	password,
-	file
+	text="text",
+	password="password",
+	file="file"
 }

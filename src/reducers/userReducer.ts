@@ -1,9 +1,7 @@
-const initialState = {
 
-}
 export 	enum REDUCER_ACTION_TYPE {
-	ADD_USER="ADD_USER",
-	GET_USERS="GET_USERS"
+	SIGN_IN="SIGN_IN",
+	SIGN_UP="SIGN_UP"
 }
 
 type ReducerAction = {

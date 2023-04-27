@@ -1,5 +1,6 @@
 import React from 'react'
 import { InputVariant, InputSize, ButtonType } from '../../enums'
+import Button from 'react-bootstrap/Button'
 type CustomButtonProps = {
 	name: string
 	label: string
@@ -12,13 +13,13 @@ type CustomButtonProps = {
 const CustomButton = (props: CustomButtonProps) => {
 	const { name, label, changeHandler, variant, size, type } = props
 	return (
-		<button
+		<Button
 			id={`${name}-button`}
 			className={`btn-${variant} btn-${size}`}
 			type={type}
 		>
 			{label}
-		</button>
+		</Button>
 	)
 }
 
