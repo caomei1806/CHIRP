@@ -1,19 +1,19 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import CustomTextField from './shared/formElements/CustomTextField'
-import { Post } from './types/Post'
+import { PostType } from './types/Post'
 import { ButtonType, InputSize, InputType, InputVariant } from './enums'
 import CustomButton from './shared/formElements/CustomButton'
 
 const AddPostForm = () => {
-	const [values, setValues] = useState<Post>({
+	const [values, setValues] = useState<PostType>({
 		imageUrl: '',
 		caption: '',
 		ownerId: '1',
 	})
-	const [imageFile, setImageFile] = useState<File>()
+	// const [imageFile, setImageFile] = useState<File>()
 
-	const uploadImage = async () => {
+	const uploadImage = async (imageFile: File) => {
 		if (imageFile) {
 			const postUrl = 'https://api.cloudinary.com/v1_1/dqd3dzadw/image/upload'
 
@@ -36,16 +36,16 @@ const AddPostForm = () => {
 
 		const { imageUrl, caption } = values
 		console.log(imageUrl, caption)
-		if (imageUrl && caption) {
-			console.log('hihi')
-			const res = await axios
-				.post(postUrl, values)
-				.then((res) => {
-					console.log(res)
-					setValues({ imageUrl: '', ownerId: '', caption: '' })
-				})
-				.catch((err) => console.log(err))
-		}
+		// if (imageUrl && caption) {
+		console.log('hihi')
+		const res = await axios
+			.post(postUrl, { ...values })
+			.then((res) => {
+				console.log(res)
+				setValues({ imageUrl: '', ownerId: '', caption: '' })
+			})
+			.catch((err) => console.log(err))
+		// }
 	}
 
 	const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -55,14 +55,15 @@ const AddPostForm = () => {
 
 			if (files) {
 				const file = files[0]
-				setImageFile(file)
+				//setImageFile(file)
+
+				const upload = await uploadImage(file)
 			}
 		} else setValues({ ...values, [event.target.name]: event.target.value })
 	}
 
 	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
-		const upload = await uploadImage()
 		const post = await addPost()
 	}
 	return (

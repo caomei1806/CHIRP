@@ -1,7 +1,7 @@
 import React from 'react'
 import { InputVariant, InputSize, InputType } from '../../enums'
 import Form from 'react-bootstrap/Form'
-import '../../scss/input.scss'
+import '../../scss/Input.scss'
 
 type CustomTextFieldProps = {
 	type: InputType

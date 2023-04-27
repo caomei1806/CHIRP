@@ -1,0 +1,43 @@
+@import "../../color.scss";
+.post {
+	width: 37rem;
+	height: 37rem;
+	color: $light;
+
+	& > * {
+		width: 100%;
+	}
+	header {
+		height: 8%;
+		.profile-icon {
+			height: 80%;
+		}
+	}
+	main {
+		height: 75%;
+		background-position: top;
+		background-size: cover;
+		img {
+			object-fit: cover;
+			object-position: center;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+	footer {
+		height: 17%;
+		.interaction {
+			.icon {
+				font-size: 1.5rem;
+				cursor: pointer;
+			}
+		}
+		.caption {
+			&-username {
+				font-weight: bold;
+			}
+			&-content {
+			}
+		}
+	}
+}

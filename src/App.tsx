@@ -35,7 +35,7 @@ const Root = () => {
 			<header className='App-header'>
 				<Navigation />
 			</header>
-			<main className='p-4'>
+			<main className='p-4 d-flex flex-column justify-content-center'>
 				<Outlet />
 			</main>
 		</>

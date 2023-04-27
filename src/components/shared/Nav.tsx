@@ -7,9 +7,9 @@ import { LinkContainer } from 'react-router-bootstrap'
 
 const Navigation = () => {
 	return (
-		<Navbar bg='dark' expand='lg' variant='dark' className='p-3'>
+		<Navbar bg='dark' expand='lg' variant='dark' className=' navbar p-3'>
 			<Container fluid>
-				<Navbar.Brand href='#'>Navbar scroll</Navbar.Brand>
+				<Navbar.Brand href='#'>CH!RP</Navbar.Brand>
 				<Navbar.Toggle aria-controls='navbarScroll' />
 				<Navbar.Collapse id='navbarScroll'>
 					<Nav

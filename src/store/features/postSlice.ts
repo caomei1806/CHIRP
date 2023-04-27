@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import axios from "axios"
 import { stat } from "fs";
-import { Post } from "../../components/types/Post";
+import { PostType } from "../../components/types/Post";
 
 type PostState = {
-	posts: Post[],
+	posts: PostType[],
 	newImageUrl: String
 }
 const initialState: PostState = {
