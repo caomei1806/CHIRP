@@ -2,7 +2,7 @@
 
 #### Karolina Grochal
 
-## `#ff0000` CHECK **LAST** README SEGMENT `#ff0000`
+## <mark style="background-color: #FFFF00">CHECK **LAST** README SEGMENT</mark>
 
 ## Run project
 
@@ -25,23 +25,23 @@ CH!RP - social media/ photo video sharing app
 
 ## Functionality
 
-### `#ffffff` Account `#ffffff`
+### <mark style="background-color: #FFFF00"> Account </main>
 
 #### 1. Create account
 
 #### 2. Sign in **use e.g. user2@gmail.com** _any password could be typped (doesn't check)_
 
-### `#ffffff` Posts `#ffffff`
+### <mark style="background-color: #FFFF00"> Posts </main>
 
 #### 1. Add post (**Create+** link)
 
 #### 2. Show feed page (**Home** link)
 
-### `#ffffff` Like `#ffffff`
+### <mark style="background-color: #FFFF00"> Like </main>
 
 #### 1. Like/dislike post (click **♡**)
 
-### `#ffffff` Comment `#ffffff`
+### <mark style="background-color: #FFFF00"> Comment </main>
 
 #### 1. Add comment
 
@@ -49,8 +49,8 @@ CH!RP - social media/ photo video sharing app
 
 ## Routes
 
-domainUrl - run locally `#ffffff` localhost:3000 `#000000`
-databaseServerUrl - run locally `#ffffff` localhost:3001 `#000000`
+domainUrl - run locally <mark style="background-color: #FFFF00"> localhost:3000 </main>
+databaseServerUrl - run locally <mark style="background-color: #FFFF00"> localhost:3001 </main>
 
 ### User routes
 
