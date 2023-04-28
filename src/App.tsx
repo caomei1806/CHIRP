@@ -11,11 +11,9 @@ import {
 import AddPostForm from './components/AddPostForm'
 import FeedPage from './components/FeedPage'
 import { SignAction } from './components/enums'
-import { useGlobalContext } from './context'
 import PrivateRoute from './PrivateRoute'
 
 function App() {
-	const { user } = useGlobalContext()
 	const router = createBrowserRouter(
 		createRoutesFromElements(
 			<Route path='/' element={<Root />}>

@@ -30,16 +30,15 @@ const SignForm = (props: ISignForm) => {
 	const { type } = props
 	const navigate = useNavigate()
 
+	// Not working yet
 	const goTo = () => {
 		redirect('/posts')
-		console.log('nav')
 	}
 
 	const loginUser = async () => {
 		const loginUrl = 'http://localhost:3001/users'
 
 		if (type === SignAction.signIn) {
-			console.log(`${loginUrl}?email=${values.email}`)
 			const loginUser = await axios
 				.get(`${loginUrl}?email=${values.email}`)
 				.then((res) => {

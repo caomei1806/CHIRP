@@ -27,7 +27,7 @@ const Comment = (props: IComment) => {
 
 		const deletePost = await axios
 			.delete(`${commentsUrl}/${id}`)
-			.then((res) => console.log(res.status))
+			.then((res) => res.status)
 	}
 
 	return (

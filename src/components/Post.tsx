@@ -6,7 +6,6 @@ import { AiOutlineHeart } from 'react-icons/ai'
 import { BsChatDots } from 'react-icons/bs'
 import { useGlobalContext } from '../context'
 import CommentSection from './CommentSection'
-import { IconBaseProps } from 'react-icons'
 
 interface IPost {
 	post: PostType
@@ -24,7 +23,6 @@ const Post = (props: IPost) => {
 
 	const postImage = createRef<HTMLImageElement>()
 
-	const likeButton = createRef<SVGAElement>()
 	const [isLiked, setIsLiked] = useState<Boolean>(false)
 
 	const likesUrl = 'http://localhost:3001/likes'
@@ -42,16 +40,14 @@ const Post = (props: IPost) => {
 		const alteredEmail = ownerEmail.split('@')[0]
 		setOwnerUsername(alteredEmail)
 	}
-	// NIE DZIALA
+	// Not working yet
 	const checkIfPostWasLiked = async (e: React.SyntheticEvent<SVGElement>) => {
 		const checkIfLiked = await axios
 			.get(`${likesUrl}?postId=${id}&personWhoLikedId=${user.id}`)
 			.then((res) => {
 				if (res.data.length > 0) {
-					console.log(res.data.length)
 					let target = e.target as SVGAElement
 					target.style.color = 'red'
-					console.log('yep')
 				}
 			})
 	}

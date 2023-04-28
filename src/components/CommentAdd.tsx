@@ -28,7 +28,7 @@ const CommentAdd = (props: ICommentAdd) => {
 		if (values.comment) {
 			const newComment = await axios
 				.post(commentsUrl, values)
-				.then((res) => console.log(res.status))
+				.then((res) => res.status)
 		}
 	}
 

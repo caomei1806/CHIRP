@@ -30,7 +30,6 @@ const AddPostForm = () => {
 				.post(postUrl, formData)
 				.then((res) => {
 					setValues({ ...values, imageUrl: res.data.secure_url })
-					console.log({ ...values, imageUrl: res.data.secure_url })
 					setImageLoaded(true)
 				})
 				.catch((err) => console.log(err))
@@ -41,11 +40,9 @@ const AddPostForm = () => {
 		const postUrl = 'http://localhost:3001/posts'
 
 		const { imageUrl, caption } = values
-		console.log(imageUrl, caption)
 		const res = await axios
 			.post(postUrl, { ...values })
-			.then((res) => {
-				console.log(res)
+			.then(() => {
 				setValues({ imageUrl: '', ownerId: 0, caption: '' })
 				redirect('/posts')
 			})
@@ -59,7 +56,6 @@ const AddPostForm = () => {
 
 			if (files) {
 				const file = files[0]
-				//setImageFile(file)
 
 				const upload = await uploadImage(file)
 			}
