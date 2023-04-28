@@ -53,7 +53,6 @@ function App() {
 						</PrivateRoute>
 					}
 				/>
-				<Route path='/posts' element={<FeedPage />} />
 				<Route path='*' element={<Navigate to='/' replace />} />
 			</Route>
 		)

@@ -6,6 +6,7 @@ import { AiOutlineHeart } from 'react-icons/ai'
 import { BsChatDots } from 'react-icons/bs'
 import { useGlobalContext } from '../context'
 import CommentSection from './CommentSection'
+import { IconBaseProps } from 'react-icons'
 
 interface IPost {
 	post: PostType
@@ -23,13 +24,12 @@ const Post = (props: IPost) => {
 
 	const postImage = createRef<HTMLImageElement>()
 
-	const likeButton = createRef<HTMLDivElement>()
+	const likeButton = createRef<SVGAElement>()
 	const [isLiked, setIsLiked] = useState<Boolean>(false)
 
 	const likesUrl = 'http://localhost:3001/likes'
 
 	useEffect(() => {
-		checkIfPostWasLiked()
 		manageImageSize()
 	}, [])
 
@@ -43,13 +43,15 @@ const Post = (props: IPost) => {
 		setOwnerUsername(alteredEmail)
 	}
 	// NIE DZIALA
-	const checkIfPostWasLiked = async () => {
+	const checkIfPostWasLiked = async (e: React.SyntheticEvent<SVGElement>) => {
 		const checkIfLiked = await axios
 			.get(`${likesUrl}?postId=${id}&personWhoLikedId=${user.id}`)
 			.then((res) => {
 				if (res.data.length > 0) {
-					let target = likeButton.current?.childNodes[0] as SVGAElement
-					//target.style.color = 'red'
+					console.log(res.data.length)
+					let target = e.target as SVGAElement
+					target.style.color = 'red'
+					console.log('yep')
 				}
 			})
 	}
@@ -114,8 +116,12 @@ const Post = (props: IPost) => {
 			</main>
 			<footer className='post-footer py-2 d-flex flex-column gap-2'>
 				<div className='interaction d-flex gap-3'>
-					<div ref={likeButton}>
-						<AiOutlineHeart className='icon' onClick={(e) => likePost(e)} />
+					<div>
+						<AiOutlineHeart
+							className='icon'
+							onClick={(e) => likePost(e)}
+							onLoad={(e) => checkIfPostWasLiked(e)}
+						/>
 					</div>
 					<BsChatDots className='icon' />
 				</div>

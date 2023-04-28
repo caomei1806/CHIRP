@@ -1,46 +1,107 @@
-# Getting Started with Create React App
+# **CH!RP**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Karolina Grochal
 
-## Available Scripts
+## `#ff0000` CHECK **LAST** README SEGMENT `#ff0000`
 
-In the project directory, you can run:
+# Run project
 
-### `yarn start`
+## Terminal 1
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```
+$ npm i
+$ npm start
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Terminal 2
 
-### `yarn test`
+```
+$ json-server --watch db.json --port 3001
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#Description
+CH!RP - social media/ photo video sharing app
 
-### `yarn build`
+# Functionality
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## `#ffffff` Account `#ffffff`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 1. Create account
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 2. Sign in **use e.g. user2@gmail.com** _any password could be typped (doesn't check)_
 
-### `yarn eject`
+## `#ffffff` Posts `#ffffff`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 1. Add post (**Create+** link)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 2. Show feed page (**Home** link)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## `#ffffff` Like `#ffffff`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 1. Like/dislike post (click **♡**)
 
-## Learn More
+## `#ffffff` Comment `#ffffff`
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 1. Add comment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 2. Delete own comment (click **...** button and then **bin icon**)
+
+# Routes
+
+domainUrl - run locally `#ffffff` localhost:3000 `#000000`
+databaseServerUrl - run locally `#ffffff` localhost:3001 `#000000`
+
+## User routes
+
+### http://domainUrl/sign-up
+
+### http://domainUrl/sign-in
+
+Requests the
+
+#### http://databaseServerUrl/users
+
+As result is given **User** type object with attributes: **id, email, password**
+
+## Post routes
+
+### http://domainUrl/post-add
+
+### http://domainUrl/posts
+
+Requests the
+
+#### http://databaseServerUrl/posts
+
+As result is given **Post** type object or array of objects with attributes: **id, imageUrl, caption, postedAt, ownerId**
+
+#### /post-add
+
+Makes request to **cloudinary** (cloud media storage) API to store posted pictures
+
+# Json-server request routes
+
+### http://databaseServerUrl/users
+
+Requests route for: **signIn, signUp, getUser** functionality
+
+### http://databaseServerUrl/posts
+
+Requests route for: **post, getPosts** functionality
+
+### http://databaseServerUrl/likes
+
+Requests route for: **like, checkIfLiked, dislike** functionality
+
+### http://databaseServerUrl/comments
+
+Requests route for: **addComment, getComment, getComments, deleteComment** functionality
+
+# Unfinished functionality
+
+Search not yet in use :**version: 0.1.0**
+When e.g. signing In doesn't redirect (react router v6.10) :**version: 0.1.0**
+Input error handling not yet added :**version: 0.1.0**
+Component functionalities need to extracted to reusable functions :**version: 0.1.0**
+Like button isn't coloured if previously liked :**version: 0.1.0**
+Comment icon should be linked to addComment input :**version: 0.1.0**

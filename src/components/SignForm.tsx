@@ -69,17 +69,17 @@ const SignForm = (props: ISignForm) => {
 			<CustomTextField
 				type={InputType.text}
 				name={'email'}
-				label={'Enter email...'}
+				placeholder={'Enter email...'}
 				changeHandler={handleChange}
-				variant={InputVariant.Primary}
+				variant={InputVariant.Dark}
 				size={InputSize.Medium}
 			/>
 			<CustomTextField
 				type={InputType.password}
 				name={'password'}
-				label={'Enter password...'}
+				placeholder={'Enter password...'}
 				changeHandler={handleChange}
-				variant={InputVariant.Primary}
+				variant={InputVariant.Dark}
 				size={InputSize.Medium}
 			/>
 			<CustomButton

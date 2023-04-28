@@ -145,6 +145,16 @@
       "postId": 2,
       "personWhoLikedId": 2,
       "id": 4
+    },
+    {
+      "postId": 2,
+      "personWhoLikedId": 2,
+      "id": 5
+    },
+    {
+      "postId": 1,
+      "personWhoLikedId": 2,
+      "id": 6
     }
   ],
   "comments": [
@@ -189,6 +199,27 @@
       "commentorId": 2,
       "commentorEmail": "user2@gmail.com",
       "id": 7
+    },
+    {
+      "comment": "why r u here",
+      "postId": 5,
+      "commentorId": 2,
+      "commentorEmail": "user2@gmail.com",
+      "id": 8
+    },
+    {
+      "comment": "r u mad?",
+      "postId": 15,
+      "commentorId": 2,
+      "commentorEmail": "user2@gmail.com",
+      "id": 9
+    },
+    {
+      "comment": "ill take it",
+      "postId": 1,
+      "commentorId": 2,
+      "commentorEmail": "user2@gmail.com",
+      "id": 10
     }
   ]
 }

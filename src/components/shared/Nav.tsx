@@ -46,7 +46,8 @@ const Navigation = () => {
 						)}
 
 						<LinkContainer to='/post-add'>
-							<Nav.Link>
+							<Nav.Link className='d-flex align-items-center'>
+								Create
 								<AiOutlinePlus />
 							</Nav.Link>
 						</LinkContainer>

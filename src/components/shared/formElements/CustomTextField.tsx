@@ -41,6 +41,7 @@ const CustomTextField = (props: CustomTextFieldProps) => {
 						className={`input-${variant} input-${size}`}
 						onChange={changeHandler}
 						placeholder={placeholder?.toString()}
+						accept='image/png, image/gif, image/jpeg'
 					/>
 					<div className='input-overlay'></div>
 				</div>
