@@ -13,6 +13,12 @@ const FeedPage = () => {
 			setPosts(res.data)
 		})
 	}
+	useEffect(() => {
+		const interval = setInterval(() => {
+			getPosts()
+		}, 1000)
+		return () => clearInterval(interval)
+	}, [])
 	const { user } = useGlobalContext()
 	useEffect(() => {
 		getPosts()

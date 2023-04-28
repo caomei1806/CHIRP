@@ -18,7 +18,10 @@ const CommentSection = (props: ICommentSection) => {
 		})
 	}
 	useEffect(() => {
-		getComments()
+		const interval = setInterval(() => {
+			getComments()
+		}, 1000)
+		return () => clearInterval(interval)
 	}, [])
 	return (
 		<div className='commentSection'>

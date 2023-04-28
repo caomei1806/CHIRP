@@ -5,7 +5,8 @@ import { PostType } from './types/Post'
 import { ButtonType, InputSize, InputType, InputVariant } from './enums'
 import CustomButton from './shared/formElements/CustomButton'
 import { useGlobalContext } from '../context'
-
+import { redirect } from 'react-router-dom'
+import './scss/Post.scss'
 const AddPostForm = () => {
 	const { user } = useGlobalContext()
 	const ownerId = user.id
@@ -14,8 +15,10 @@ const AddPostForm = () => {
 		caption: '',
 		ownerId: ownerId,
 	})
+	const [imageLoaded, setImageLoaded] = useState<Boolean>(false)
 
 	const uploadImage = async (imageFile: File) => {
+		setImageLoaded(false)
 		if (imageFile) {
 			const postUrl = 'https://api.cloudinary.com/v1_1/dqd3dzadw/image/upload'
 
@@ -28,6 +31,7 @@ const AddPostForm = () => {
 				.then((res) => {
 					setValues({ ...values, imageUrl: res.data.secure_url })
 					console.log({ ...values, imageUrl: res.data.secure_url })
+					setImageLoaded(true)
 				})
 				.catch((err) => console.log(err))
 		}
@@ -43,6 +47,7 @@ const AddPostForm = () => {
 			.then((res) => {
 				console.log(res)
 				setValues({ imageUrl: '', ownerId: 0, caption: '' })
+				redirect('/posts')
 			})
 			.catch((err) => console.log(err))
 	}
@@ -75,12 +80,20 @@ const AddPostForm = () => {
 				variant={InputVariant.Primary}
 				size={InputSize.Medium}
 			/>
+			{values.imageUrl && (
+				<img
+					className='imageAdded'
+					src={values.imageUrl.toString()}
+					alt={values.imageUrl.toString()}
+				/>
+			)}
+
 			<CustomTextField
 				type={InputType.text}
 				name={'caption'}
 				label={'Add your caption...'}
 				changeHandler={handleChange}
-				variant={InputVariant.Primary}
+				variant={InputVariant.Dark}
 				size={InputSize.Medium}
 			/>
 			<CustomButton

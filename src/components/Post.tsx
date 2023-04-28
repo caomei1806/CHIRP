@@ -30,6 +30,7 @@ const Post = (props: IPost) => {
 
 	useEffect(() => {
 		checkIfPostWasLiked()
+		manageImageSize()
 	}, [])
 
 	const getUsername = async () => {
@@ -58,7 +59,6 @@ const Post = (props: IPost) => {
 			const image = postImage.current
 			const imageWidth = image.width
 			const imageHeight = image.height
-			image.style.height = '100%'
 			if (imageWidth > imageHeight) {
 				image.style.width = '100%'
 			}
