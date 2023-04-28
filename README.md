@@ -1,103 +1,104 @@
-# **CH!RP**
+## **CH!RP**
 
-## Karolina Grochal
+#### Karolina Grochal
 
 ## `#ff0000` CHECK **LAST** README SEGMENT `#ff0000`
 
-# Run project
+## Run project
 
-## Terminal 1
+### Terminal 1
 
 ```
 $ npm i
 $ npm start
 ```
 
-## Terminal 2
+### Terminal 2
 
 ```
 $ json-server --watch db.json --port 3001
 ```
 
-#Description
+## Description
+
 CH!RP - social media/ photo video sharing app
 
-# Functionality
+## Functionality
 
-## `#ffffff` Account `#ffffff`
+### `#ffffff` Account `#ffffff`
 
-## 1. Create account
+#### 1. Create account
 
-## 2. Sign in **use e.g. user2@gmail.com** _any password could be typped (doesn't check)_
+#### 2. Sign in **use e.g. user2@gmail.com** _any password could be typped (doesn't check)_
 
-## `#ffffff` Posts `#ffffff`
+### `#ffffff` Posts `#ffffff`
 
-## 1. Add post (**Create+** link)
+#### 1. Add post (**Create+** link)
 
-## 2. Show feed page (**Home** link)
+#### 2. Show feed page (**Home** link)
 
-## `#ffffff` Like `#ffffff`
+### `#ffffff` Like `#ffffff`
 
-## 1. Like/dislike post (click **♡**)
+#### 1. Like/dislike post (click **♡**)
 
-## `#ffffff` Comment `#ffffff`
+### `#ffffff` Comment `#ffffff`
 
-## 1. Add comment
+#### 1. Add comment
 
-## 2. Delete own comment (click **...** button and then **bin icon**)
+#### 2. Delete own comment (click **...** button and then **bin icon**)
 
-# Routes
+## Routes
 
 domainUrl - run locally `#ffffff` localhost:3000 `#000000`
 databaseServerUrl - run locally `#ffffff` localhost:3001 `#000000`
 
-## User routes
+### User routes
 
-### http://domainUrl/sign-up
+##### http://domainUrl/sign-up
 
-### http://domainUrl/sign-in
+##### http://domainUrl/sign-in
 
 Requests the
 
-#### http://databaseServerUrl/users
+##### http://databaseServerUrl/users
 
 As result is given **User** type object with attributes: **id, email, password**
 
-## Post routes
+### Post routes
 
-### http://domainUrl/post-add
+##### http://domainUrl/post-add
 
-### http://domainUrl/posts
+##### http://domainUrl/posts
 
 Requests the
 
-#### http://databaseServerUrl/posts
+##### http://databaseServerUrl/posts
 
 As result is given **Post** type object or array of objects with attributes: **id, imageUrl, caption, postedAt, ownerId**
 
-#### /post-add
+##### /post-add
 
 Makes request to **cloudinary** (cloud media storage) API to store posted pictures
 
-# Json-server request routes
+## Json-server request routes
 
-### http://databaseServerUrl/users
+##### http://databaseServerUrl/users
 
 Requests route for: **signIn, signUp, getUser** functionality
 
-### http://databaseServerUrl/posts
+##### http://databaseServerUrl/posts
 
 Requests route for: **post, getPosts** functionality
 
-### http://databaseServerUrl/likes
+##### http://databaseServerUrl/likes
 
 Requests route for: **like, checkIfLiked, dislike** functionality
 
-### http://databaseServerUrl/comments
+##### http://databaseServerUrl/comments
 
 Requests route for: **addComment, getComment, getComments, deleteComment** functionality
 
-# Unfinished functionality
+## Unfinished functionality
 
 Search not yet in use :**version: 0.1.0**
 When e.g. signing In doesn't redirect (react router v6.10) :**version: 0.1.0**
