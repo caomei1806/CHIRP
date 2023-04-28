@@ -4,14 +4,16 @@ import CustomTextField from './shared/formElements/CustomTextField'
 import { PostType } from './types/Post'
 import { ButtonType, InputSize, InputType, InputVariant } from './enums'
 import CustomButton from './shared/formElements/CustomButton'
+import { useGlobalContext } from '../context'
 
 const AddPostForm = () => {
+	const { user } = useGlobalContext()
+	const ownerId = user.id
 	const [values, setValues] = useState<PostType>({
 		imageUrl: '',
 		caption: '',
-		ownerId: '1',
+		ownerId: ownerId,
 	})
-	// const [imageFile, setImageFile] = useState<File>()
 
 	const uploadImage = async (imageFile: File) => {
 		if (imageFile) {
@@ -36,16 +38,13 @@ const AddPostForm = () => {
 
 		const { imageUrl, caption } = values
 		console.log(imageUrl, caption)
-		// if (imageUrl && caption) {
-		console.log('hihi')
 		const res = await axios
 			.post(postUrl, { ...values })
 			.then((res) => {
 				console.log(res)
-				setValues({ imageUrl: '', ownerId: '', caption: '' })
+				setValues({ imageUrl: '', ownerId: 0, caption: '' })
 			})
 			.catch((err) => console.log(err))
-		// }
 	}
 
 	const handleChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -83,7 +82,6 @@ const AddPostForm = () => {
 				changeHandler={handleChange}
 				variant={InputVariant.Primary}
 				size={InputSize.Medium}
-				password={true}
 			/>
 			<CustomButton
 				type={ButtonType.Submit}

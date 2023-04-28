@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { createRef, useEffect } from 'react'
 import { InputVariant, InputSize, InputType } from '../../enums'
 import Form from 'react-bootstrap/Form'
 import '../../scss/Input.scss'
@@ -6,15 +6,28 @@ import '../../scss/Input.scss'
 type CustomTextFieldProps = {
 	type: InputType
 	name: string
-	label: string
+	label?: string
 	changeHandler: (event: React.ChangeEvent<HTMLInputElement>) => void
 	variant: InputVariant
 	size: InputSize
-	password?: Boolean
+	placeholder?: String
+	submitHandler?: (event: React.KeyboardEvent<HTMLInputElement>) => void
+	value?: string
 }
 
 const CustomTextField = (props: CustomTextFieldProps) => {
-	const { type, name, label, changeHandler, variant, size } = props
+	const {
+		type,
+		name,
+		label,
+		changeHandler,
+		variant,
+		size,
+		placeholder,
+		submitHandler,
+		value,
+	} = props
+
 	return (
 		<Form.Group>
 			<Form.Label htmlFor={name}>{label}</Form.Label>
@@ -27,6 +40,7 @@ const CustomTextField = (props: CustomTextFieldProps) => {
 						id={`${name}-input`}
 						className={`input-${variant} input-${size}`}
 						onChange={changeHandler}
+						placeholder={placeholder?.toString()}
 					/>
 					<div className='input-overlay'></div>
 				</div>
@@ -37,6 +51,9 @@ const CustomTextField = (props: CustomTextFieldProps) => {
 					id={`${name}-input`}
 					className={`input-${variant} input-${size}`}
 					onChange={changeHandler}
+					placeholder={placeholder?.toString()}
+					onKeyDown={submitHandler}
+					value={value}
 				/>
 			)}
 		</Form.Group>

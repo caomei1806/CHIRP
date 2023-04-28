@@ -1,6 +1,6 @@
 export enum InputVariant {
-	Primary,
-	Secondary,
-	Light,
-	Dark,
+	Primary="primary",
+	Secondary="secondary",
+	Light="light",
+	Dark="dark",
 }

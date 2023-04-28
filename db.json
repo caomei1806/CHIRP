@@ -24,6 +24,16 @@
       "email": "user5@gmail.com",
       "password": "123",
       "id": 5
+    },
+    {
+      "email": "user6@gmail.com",
+      "password": "123",
+      "id": 6
+    },
+    {
+      "email": "user7@gmail.com",
+      "password": "ghj",
+      "id": 7
     }
   ],
   "posts": [
@@ -52,6 +62,64 @@
       "imageUrl": "https://res.cloudinary.com/dqd3dzadw/image/upload/v1682591181/q8yw259ar1ufqmmagyo1.png",
       "caption": "violet",
       "ownerId": "1",
+      "id": 5
+    },
+    {
+      "imageUrl": "https://res.cloudinary.com/dqd3dzadw/image/upload/v1682611608/fbtzrp33e1ilzcc0uwxr.jpg",
+      "caption": "pic",
+      "ownerId": 6,
+      "id": 6
+    }
+  ],
+  "likes": [
+    {
+      "postId": 2,
+      "personWhoLikedId": 2,
+      "id": 1
+    },
+    {
+      "postId": 3,
+      "personWhoLikedId": 2,
+      "id": 2
+    },
+    {
+      "postId": 1,
+      "personWhoLikedId": 2,
+      "id": 3
+    },
+    {
+      "postId": 2,
+      "personWhoLikedId": 2,
+      "id": 4
+    }
+  ],
+  "comments": [
+    {
+      "id": 2,
+      "postId": 2,
+      "commentorId": 2,
+      "commentorEmail": "user2@gmail.com",
+      "comment": "want that"
+    },
+    {
+      "id": 3,
+      "postId": 2,
+      "commentorId": 1,
+      "commentorEmail": "user1@gmail.com",
+      "comment": "gimme gimme"
+    },
+    {
+      "comment": "cant buy it on amazon",
+      "postId": 2,
+      "commentorId": 3,
+      "commentorEmail": "user3@gmail.com",
+      "id": 4
+    },
+    {
+      "comment": "what a beautiful birdie",
+      "postId": 1,
+      "commentorId": 7,
+      "commentorEmail": "user7@gmail.com",
       "id": 5
     }
   ]

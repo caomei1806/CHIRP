@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import CustomTextField from './shared/formElements/CustomTextField'
 import {
 	ButtonType,
@@ -11,6 +11,7 @@ import CustomButton from './shared/formElements/CustomButton'
 import axios from 'axios'
 import Form from 'react-bootstrap/Form'
 import { useGlobalContext } from '../context'
+import { useNavigate, redirect } from 'react-router-dom'
 
 type Values = {
 	email: string
@@ -25,8 +26,14 @@ const SignForm = (props: ISignForm) => {
 		email: '',
 		password: '',
 	})
-	const { user, setUser } = useGlobalContext()
+	const { setUser } = useGlobalContext()
 	const { type } = props
+	const navigate = useNavigate()
+
+	const goTo = () => {
+		redirect('/posts')
+		console.log('nav')
+	}
 
 	const loginUser = async () => {
 		const loginUrl = 'http://localhost:3001/users'
@@ -36,13 +43,13 @@ const SignForm = (props: ISignForm) => {
 			const loginUser = await axios
 				.get(`${loginUrl}?email=${values.email}`)
 				.then((res) => {
-					const userId = res.data[0].id
-					setUser(userId)
+					const user = res.data[0]
+					setUser(user)
 				})
 		} else {
 			const addUser = await axios.post(loginUrl, values).then((res) => {
-				const userId = res.data.id
-				setUser(userId)
+				const user = res.data
+				setUser(user)
 			})
 		}
 	}
@@ -74,12 +81,11 @@ const SignForm = (props: ISignForm) => {
 				changeHandler={handleChange}
 				variant={InputVariant.Primary}
 				size={InputSize.Medium}
-				password={true}
 			/>
 			<CustomButton
 				type={ButtonType.Submit}
 				name={'submit'}
-				label={'SignIn'}
+				label={type}
 				changeHandler={handleSubmit}
 				variant={InputVariant.Primary}
 				size={InputSize.Medium}

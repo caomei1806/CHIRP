@@ -1,3 +1,4 @@
+@import "../../color.scss";
 input {
 	&[type="file"] {
 		width: 100%;
@@ -7,17 +8,11 @@ input {
 		left: 0;
 		opacity: 0;
 		z-index: 2;
-		// &::after {
-		// 	// content: '<img src="https://res.cloudinary.com/dqd3dzadw/image/upload/v1682585738/zlxtvwcbvzlfjuqitgmp.png" alt="add photo"/>';
-		// 	content: "abc";
-		// 	width: 100%;
-		// 	height: 100%;
-		// 	display: block;
-		// 	background-color: black;
-		// 	position: absolute;
-		// 	top: 0;
-		// 	left: 0;
-		// }
+	}
+	&::placeholder {
+		/* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: $light;
+		display: block;
 	}
 }
 .input {
@@ -37,5 +32,21 @@ input {
 		background-size: contain;
 		background-repeat: no-repeat;
 		cursor: pointer;
+	}
+	&-dark {
+		background-color: $dark;
+		border: 0;
+		border-radius: 0;
+		border-bottom: 1px solid $distinct;
+		&:active,
+		&:focus {
+			background-color: $dark;
+			box-shadow: none;
+		}
+	}
+	&::placeholder {
+		/* Chrome, Firefox, Opera, Safari 10.1+ */
+		color: $light;
+		display: block;
 	}
 }

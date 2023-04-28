@@ -1,7 +1,7 @@
 export type PostType = {
-	id?: String,
+	id?: Number,
 	imageUrl: String,
 	caption: String,
 	postedAt?: Date,
-	ownerId: String
+	ownerId: Number
 }

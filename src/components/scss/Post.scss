@@ -1,20 +1,19 @@
 @import "../../color.scss";
 .post {
 	width: 37rem;
-	height: 37rem;
 	color: $light;
 
 	& > * {
 		width: 100%;
 	}
-	header {
-		height: 8%;
+	&-header {
+		height: 3rem;
 		.profile-icon {
 			height: 80%;
 		}
 	}
-	main {
-		height: 75%;
+	&-main {
+		height: 30rem;
 		background-position: top;
 		background-size: cover;
 		img {
@@ -24,8 +23,7 @@
 			margin-right: auto;
 		}
 	}
-	footer {
-		height: 17%;
+	&-footer {
 		.interaction {
 			.icon {
 				font-size: 1.5rem;

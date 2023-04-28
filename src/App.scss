@@ -1,12 +1,15 @@
 @import "~bootstrap/scss/bootstrap";
 @import "./color.scss";
 .App {
+	background-color: #161515;
+	height: 100vh;
+	color: $light;
+	overflow-y: scroll;
 	.navbar {
 		background-color: $dark !important;
 		border-bottom: 1px solid $distinct;
 	}
 	main {
-		background-color: #161515;
 		& > * {
 			display: flex;
 			flex-direction: column;
@@ -15,5 +18,14 @@
 		& > form {
 			width: 50%;
 		}
+	}
+}
+::-webkit-scrollbar {
+	width: 10px;
+	&-track {
+		background-color: $distinct;
+	}
+	&-thumb {
+		box-shadow: inset 0 0 6px $dark;
 	}
 }

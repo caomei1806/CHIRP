@@ -1,0 +1,28 @@
+.commentSection {
+	main {
+		overflow-y: auto;
+		height: 3rem;
+		&:not(:has(span)) {
+			height: 0;
+		}
+		.comment {
+			display: flex;
+			flex-direction: row;
+			gap: 0.5rem;
+			&-username {
+				display: block;
+			}
+			&-settings {
+				margin-left: auto;
+				margin-right: 2rem;
+				cursor: pointer;
+			}
+			&-delete {
+				margin-right: 1em;
+				&:hover {
+					color: red;
+				}
+			}
+		}
+	}
+}
